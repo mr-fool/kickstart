@@ -24,3 +24,11 @@ var input = {
 }
 
 var output = JSON.parse(solc.compile(JSON.stringify(input)));
+fs.ensureDirSync(buildPath);
+
+for (let contract in output) {
+    fs.outputJsonSync (
+        path.resolve(buildPath, contract + '.json'),
+        output[contract]
+    );
+}
