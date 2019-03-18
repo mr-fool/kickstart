@@ -24,13 +24,17 @@ var input = {
 }
 
 var output = JSON.parse(solc.compile(JSON.stringify(input)));
-console.log(output);
+//Object.values(output).forEach(console.log);
+//Object.keys(output).forEach((key) => makeFile(output[key]));
+
 
 fs.ensureDirSync(buildPath);
 
 for (let contract in output) {
     fs.outputJsonSync (
-        path.resolve(buildPath, contract + '.json'),
+		//path.resolve(buildPath, contract + '.json'),
+		Object.keys(output['Campaign.sol']).forEach((key) => fs.writeFileSync(output['Campaign.sol'][key], path)),
+
         output[contract]
     );
 }
