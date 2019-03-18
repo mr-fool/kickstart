@@ -24,6 +24,8 @@ var input = {
 }
 
 var output = JSON.parse(solc.compile(JSON.stringify(input)));
+console.log(output);
+
 fs.ensureDirSync(buildPath);
 
 for (let contract in output) {
@@ -32,3 +34,4 @@ for (let contract in output) {
         output[contract]
     );
 }
+//http://jsonviewer.stack.hu/
