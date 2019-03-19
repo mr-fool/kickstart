@@ -1,6 +1,6 @@
 pragma solidity >=0.4.22 <0.6.0;
 
-/*contract CampaignFactory {
+contract CampaignFactory {
     Campaign[] public deployedCampaigns;
     
     function createCampaign(uint minimum) public {
@@ -10,7 +10,7 @@ pragma solidity >=0.4.22 <0.6.0;
     function getDeployedCampaigns() public view returns (Campaign[] memory){
         return deployedCampaigns;
     }
-}*/
+}
 
 
 contract Campaign {
