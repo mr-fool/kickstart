@@ -1,5 +1,5 @@
 pragma solidity >=0.4.22 <0.6.0;
-import "Campaign.sol";
+import "./Campaign.sol";
 
 contract CampaignFactory {
     Campaign[] public deployedCampaigns;
