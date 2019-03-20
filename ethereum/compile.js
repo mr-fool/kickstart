@@ -30,7 +30,7 @@ var output = JSON.parse(solc.compile(JSON.stringify(input)));
 
 fs.ensureDirSync(buildPath);
 
-for (let contract in output) {
+for (let contract in output.contracts['Campaign.sol']) {
     fs.outputJsonSync (
 		path.resolve(buildPath, contract.replace(':', '') + '.json'),
 
