@@ -88,15 +88,15 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./pages/show.js":
-/*!***********************!*\
-  !*** ./pages/show.js ***!
-  \***********************/
+/***/ "./pages/index.js":
+/*!************************!*\
+  !*** ./pages/index.js ***!
+  \************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -104,7 +104,7 @@ module.exports =
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "C:\\Users\\hetzer\\Documents\\GitHub\\kickstart\\pages\\show.js";
+var _jsxFileName = "C:\\Users\\hetzer\\Documents\\GitHub\\kickstart\\pages\\index.js";
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
@@ -113,19 +113,19 @@ var _jsxFileName = "C:\\Users\\hetzer\\Documents\\GitHub\\kickstart\\pages\\show
       lineNumber: 5
     },
     __self: this
-  }, "Welcome to the show page!!!");
+  }, "This is the campaign list page!!!");
 });
 
 /***/ }),
 
-/***/ 4:
-/*!*****************************!*\
-  !*** multi ./pages/show.js ***!
-  \*****************************/
+/***/ 3:
+/*!******************************!*\
+  !*** multi ./pages/index.js ***!
+  \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\hetzer\Documents\GitHub\kickstart\pages\show.js */"./pages/show.js");
+module.exports = __webpack_require__(/*! C:\Users\hetzer\Documents\GitHub\kickstart\pages\index.js */"./pages/index.js");
 
 
 /***/ }),
@@ -142,4 +142,4 @@ module.exports = require("react");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=show.js.map
+//# sourceMappingURL=index.js.map
