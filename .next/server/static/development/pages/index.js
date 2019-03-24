@@ -589,7 +589,16 @@ function (_Component) {
           lineNumber: 26
         },
         __self: this
-      }), this.renderCampaigns());
+      }), this.renderCampaigns(), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_9__["Button"], {
+        content: "Create Campaign",
+        icon: "add",
+        primary: true,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 28
+        },
+        __self: this
+      }));
     }
   }], [{
     key: "getInitialProps",
