@@ -650,7 +650,7 @@ function (_Component) {
           description: react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 18
+              lineNumber: 17
             },
             __self: this
           }, "View Campaign"),
@@ -661,7 +661,7 @@ function (_Component) {
         items: items,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22
+          lineNumber: 21
         },
         __self: this
       });
@@ -672,13 +672,13 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_10__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 26
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28
+          lineNumber: 27
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("link", {
@@ -686,19 +686,26 @@ function (_Component) {
         href: "//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css",
         __source: {
           fileName: _jsxFileName,
+          lineNumber: 28
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h3", {
+        __source: {
+          fileName: _jsxFileName,
           lineNumber: 29
         },
         __self: this
-      }), this.renderCampaigns(), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_9__["Button"], {
+      }, "Open Campaigns"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_9__["Button"], {
         content: "Create Campaign",
         icon: "add",
         primary: true,
+        floated: "right",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 31
         },
         __self: this
-      })));
+      }), this.renderCampaigns()));
     }
   }], [{
     key: "getInitialProps",
