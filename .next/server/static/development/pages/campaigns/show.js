@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -621,6 +621,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ethereum_campaign__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../ethereum/campaign */ "./ethereum/campaign.js");
 /* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! semantic-ui-react */ "semantic-ui-react");
 /* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _ethereum_web3__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../ethereum/web3 */ "./ethereum/web3.js");
+
 
 
 
@@ -660,6 +662,22 @@ function (_Component) {
         style: {
           overflowWrap: 'break-word'
         }
+      }, {
+        header: minimumContribution,
+        meta: "Minimum Contribution (wei)",
+        description: "You must at least contribute at least this much wei to become an approver"
+      }, {
+        header: requestsCount,
+        meta: "Number of Requests",
+        description: "A request tries to withdraw money from the contract. Requests must be approved by approvers"
+      }, {
+        header: approversCount,
+        meta: "Number of Approvers",
+        description: "Number of people who have already donated to this campaign"
+      }, {
+        header: _ethereum_web3__WEBPACK_IMPORTED_MODULE_11__["default"].utils.fromWei(balance, 'ether'),
+        meta: "Campaign Balance (ehter)",
+        description: "The balance is how much money this campaign has left to spend."
       }];
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Card"].Group, {
         items: items
@@ -735,7 +753,7 @@ module.exports = routes;
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /*!***************************************!*\
   !*** multi ./pages/campaigns/show.js ***!
   \***************************************/
