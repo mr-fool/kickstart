@@ -655,7 +655,10 @@ function (_Component) {
           description: react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
             route: "/campaigns/".concat(address)
           }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", null, "View Campaign")),
-          fluid: true
+          fluid: true,
+          style: {
+            overflowWrap: 'break-word'
+          }
         };
       });
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_9__["Card"].Group, {

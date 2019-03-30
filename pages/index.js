@@ -20,7 +20,8 @@ class CampaignIndex extends Component {
           <a>View Campaign</a>
         </Link>
         ),
-        fluid: true
+        fluid: true,
+        style: {overflowWrap: 'break-word'}
       };
     });
     return <Card.Group items={items} />;
@@ -39,6 +40,7 @@ class CampaignIndex extends Component {
             icon="add"
             primary
             floated = 'right'
+            
           />
           </a>
           </Link>

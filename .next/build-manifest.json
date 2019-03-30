@@ -19,10 +19,6 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/campaigns/show": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
     "/": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
