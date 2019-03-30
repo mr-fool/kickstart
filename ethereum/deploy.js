@@ -21,3 +21,4 @@ const deploy = async () => {
 };
 deploy();
 //Contract deployed to 0x6EB44De85740f2617705B17291B4da2a776C47Dd
+//Contract deployed to 0x774fe88344aa3e95a8f1ea9a0ce5b4e481b15aa4
