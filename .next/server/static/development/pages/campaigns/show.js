@@ -619,6 +619,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/Layout */ "./components/Layout.js");
 /* harmony import */ var _ethereum_campaign__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../ethereum/campaign */ "./ethereum/campaign.js");
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! semantic-ui-react */ "semantic-ui-react");
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__);
+
 
 
 
@@ -642,9 +645,30 @@ function (_Component) {
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__["default"])(CampaignShow, [{
+    key: "renderCards",
+    value: function renderCards() {
+      var _this$props = this.props,
+          balance = _this$props.balance,
+          manager = _this$props.manager,
+          minimumContribution = _this$props.minimumContribution,
+          requestsCount = _this$props.requestsCount,
+          approversCount = _this$props.approversCount;
+      var items = [{
+        header: manager,
+        meta: 'Address of Manager',
+        description: 'The manager created this campaign and can create requests to withdraw money',
+        style: {
+          overflowWrap: 'break-word'
+        }
+      }];
+      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Card"].Group, {
+        items: items
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_8__["default"], null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h3", null, "Campaign Show"));
+      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_8__["default"], null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h3", null, "Campaign Show"), this.renderCards());
     }
   }], [{
     key: "getInitialProps",
@@ -663,7 +687,13 @@ function (_Component) {
 
               case 3:
                 summary = _context.sent;
-                return _context.abrupt("return", {});
+                return _context.abrupt("return", {
+                  minimumContribution: summary[0],
+                  balance: summary[1],
+                  requestsCount: summary[2],
+                  approversCount: summary[3],
+                  manager: summary[4]
+                });
 
               case 5:
               case "end":
