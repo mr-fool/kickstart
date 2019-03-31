@@ -732,7 +732,7 @@ function (_Component) {
 
 var routes = __webpack_require__(/*! next-routes */ "next-routes")();
 
-routes.add('/campaigns/new', '/campaigns/new').add('/campaigns/:address', '/campaigns/show');
+routes.add('/campaigns/new', '/campaigns/new').add('/campaigns/:address', '/campaigns/show').add('/campaigns/:address/requests', '/campaigns/requests/index');
 module.exports = routes;
 
 /***/ }),

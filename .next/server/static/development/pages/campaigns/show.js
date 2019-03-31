@@ -154,7 +154,9 @@ function (_Component) {
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(ContributeForm)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "state", {
-      value: ''
+      value: '',
+      errorMessage: '',
+      loading: false
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "onSubmit",
@@ -170,33 +172,49 @@ function (_Component) {
               case 0:
                 event.preventDefault();
                 campaign = Object(_ethereum_campaign__WEBPACK_IMPORTED_MODULE_11__["default"])(_this.props.address);
-                _context.prev = 2;
-                _context.next = 5;
+
+                _this.setState({
+                  loading: true,
+                  errorMessage: ''
+                });
+
+                _context.prev = 3;
+                _context.next = 6;
                 return _ethereum_web3__WEBPACK_IMPORTED_MODULE_12__["default"].eth.getAccounts();
 
-              case 5:
+              case 6:
                 accounts = _context.sent;
-                _context.next = 8;
+                _context.next = 9;
                 return campaign.methods.contribute().send({
                   from: accounts[0],
                   value: _ethereum_web3__WEBPACK_IMPORTED_MODULE_12__["default"].utils.toWei(_this.state.value, 'ether')
                 });
 
-              case 8:
+              case 9:
                 _routes__WEBPACK_IMPORTED_MODULE_13__["Router"].replaceRoute("/campaigns/".concat(_this.props.address));
-                _context.next = 13;
+                _context.next = 15;
                 break;
 
-              case 11:
-                _context.prev = 11;
-                _context.t0 = _context["catch"](2);
+              case 12:
+                _context.prev = 12;
+                _context.t0 = _context["catch"](3);
 
-              case 13:
+                _this.setState({
+                  errorMessage: _context.t0.message
+                });
+
+              case 15:
+                _this.setState({
+                  loading: false,
+                  value: ''
+                });
+
+              case 16:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[2, 11]]);
+        }, _callee, null, [[3, 12]]);
       }));
 
       return function (_x) {
@@ -213,7 +231,8 @@ function (_Component) {
       var _this2 = this;
 
       return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Form"], {
-        onSubmit: this.onSubmit
+        onSubmit: this.onSubmit,
+        error: !!this.state.errorMessage
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Form"].Field, null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("label", null, "Amount to Contribute"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Input"], {
         value: this.state.value,
         onChange: function onChange(event) {
@@ -223,8 +242,13 @@ function (_Component) {
         },
         label: "ether",
         labelPosition: "right"
-      })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Button"], {
-        primary: true
+      })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Message"], {
+        error: true,
+        header: "Alert",
+        content: this.state.errorMessage
+      }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Button"], {
+        primary: true,
+        loading: this.state.loading
       }, "Contribute!"));
     }
   }]);
@@ -796,6 +820,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var _ethereum_web3__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../ethereum/web3 */ "./ethereum/web3.js");
 /* harmony import */ var _components_ContributeForm__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../components/ContributeForm */ "./components/ContributeForm.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../routes */ "./routes.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_13__);
+
 
 
 
@@ -863,7 +890,11 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_8__["default"], null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h3", null, "Campaign Show"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Grid"], null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Grid"].Column, {
         width: 10
-      }, this.renderCards()), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Grid"].Column, {
+      }, this.renderCards(), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_13__["Link"], {
+        route: "/campaigns/".concat(this.props.address, "/requests")
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Button"], {
+        primary: true
+      }, "View Requests")))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Grid"].Column, {
         width: 6
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_ContributeForm__WEBPACK_IMPORTED_MODULE_12__["default"], {
         address: this.props.address
@@ -930,7 +961,7 @@ function (_Component) {
 
 var routes = __webpack_require__(/*! next-routes */ "next-routes")();
 
-routes.add('/campaigns/new', '/campaigns/new').add('/campaigns/:address', '/campaigns/show');
+routes.add('/campaigns/new', '/campaigns/new').add('/campaigns/:address', '/campaigns/show').add('/campaigns/:address/requests', '/campaigns/requests/index');
 module.exports = routes;
 
 /***/ }),
