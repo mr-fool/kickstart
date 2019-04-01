@@ -878,7 +878,7 @@ function (_Component) {
         description: "Number of people who have already donated to this campaign"
       }, {
         header: _ethereum_web3__WEBPACK_IMPORTED_MODULE_11__["default"].utils.fromWei(balance, 'ether'),
-        meta: "Campaign Balance (ehter)",
+        meta: "Campaign Balance (ether)",
         description: "The balance is how much money this campaign has left to spend."
       }];
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Card"].Group, {

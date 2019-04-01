@@ -56,7 +56,7 @@ class CampaignShow extends Component {
             },
             {
                 header: web3.utils.fromWei(balance, 'ether'),
-                meta: "Campaign Balance (ehter)",
+                meta: "Campaign Balance (ether)",
                 description: "The balance is how much money this campaign has left to spend."
             }
         ];

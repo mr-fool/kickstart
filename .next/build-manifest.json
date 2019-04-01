@@ -15,14 +15,6 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/campaigns/requests": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/campaigns/requests/new": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
     "/campaigns/show": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
