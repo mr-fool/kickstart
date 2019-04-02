@@ -11,11 +11,23 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/campaigns/show": [
+    "/next/dist/pages/_error": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
     "/campaigns/requests": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/index": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/campaigns/show": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
