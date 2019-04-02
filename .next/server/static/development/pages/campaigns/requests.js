@@ -274,6 +274,35 @@ function (_Component) {
       }, _callee);
     })));
 
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "onFinalize",
+    /*#__PURE__*/
+    Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
+    /*#__PURE__*/
+    _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+      var campaign, accounts;
+      return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              campaign = Object(_ethereum_campaign__WEBPACK_IMPORTED_MODULE_12__["default"])(_this.props.address);
+              _context2.next = 3;
+              return _ethereum_web3__WEBPACK_IMPORTED_MODULE_11__["default"].eth.getAccounts();
+
+            case 3:
+              accounts = _context2.sent;
+              _context2.next = 6;
+              return campaign.methods.finalizeRequest(_this.props.id).send({
+                from: accounts[0]
+              });
+
+            case 6:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    })));
+
     return _this;
   }
 
@@ -290,7 +319,11 @@ function (_Component) {
         color: "green",
         basic: true,
         onClick: this.onApprove
-      }, "Approve")));
+      }, "Approve")), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(Cell, null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Button"], {
+        color: "red",
+        basic: true,
+        onClick: this.onFinalize
+      }, "Finalize")));
     }
   }]);
 
