@@ -315,11 +315,15 @@ function (_Component) {
           id = _this$props.id,
           request = _this$props.request,
           approversCount = _this$props.approversCount;
-      return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(Row, null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(Cell, null, id), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(Cell, null, request.description), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(Cell, null, _ethereum_web3__WEBPACK_IMPORTED_MODULE_11__["default"].utils.fromWei(request.value, 'ether')), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(Cell, null, request.recipient), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(Cell, null, request.approvalCount, "/", approversCount), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(Cell, null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Button"], {
+      var readyToFinalize = request.approvalCount > approversCount / 2;
+      return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(Row, {
+        disabled: request.complete,
+        positive: readyToFinalize && !request.complete
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(Cell, null, id), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(Cell, null, request.description), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(Cell, null, _ethereum_web3__WEBPACK_IMPORTED_MODULE_11__["default"].utils.fromWei(request.value, 'ether')), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(Cell, null, request.recipient), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(Cell, null, request.approvalCount, "/", approversCount), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(Cell, null, request.complete ? null : react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Button"], {
         color: "green",
         basic: true,
         onClick: this.onApprove
-      }, "Approve")), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(Cell, null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Button"], {
+      }, "Approve")), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(Cell, null, request.complete ? null : react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Button"], {
         color: "red",
         basic: true,
         onClick: this.onFinalize
@@ -867,8 +871,12 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_12__["default"], null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("h3", null, "Requests"), console.log(this.props.address), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
         route: "/campaigns/".concat(this.props.address, "/requests/new")
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("a", null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Button"], {
-        primary: true
-      }, "Add Request"))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Table"], null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(Header, null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(Row, null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(HeaderCell, null, "ID"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(HeaderCell, null, "Description"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(HeaderCell, null, "Amount"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(HeaderCell, null, "Recipient"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(HeaderCell, null, "Approval Count"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(HeaderCell, null, "Approve"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(HeaderCell, null, "Finalize"))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(Body, null, this.renderRows())));
+        primary: true,
+        floated: "right",
+        style: {
+          marginBottom: 10
+        }
+      }, "Add Request"))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(semantic_ui_react__WEBPACK_IMPORTED_MODULE_10__["Table"], null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(Header, null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(Row, null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(HeaderCell, null, "ID"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(HeaderCell, null, "Description"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(HeaderCell, null, "Amount"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(HeaderCell, null, "Recipient"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(HeaderCell, null, "Approval Count"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(HeaderCell, null, "Approve"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(HeaderCell, null, "Finalize"))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(Body, null, this.renderRows())), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", null, "Found ", this.props.requestCount, " requests."));
     }
   }], [{
     key: "getInitialProps",
